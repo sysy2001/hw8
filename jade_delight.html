@@ -3,7 +3,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Jade Delight</title>
 <style>
-/*some style here*/
+    .userInfo input{
+        position: absolute;
+        left: 200px;
+    }
+
+    .totalSection input{
+        position: absolute;
+        left: 200px;
+    }
+
+    body,html {
+        background-color: #99c4b0;
+    }   
+
 </style>
 </head>
 <body>
@@ -81,7 +94,7 @@ function td(content, className="")
 <p class="tax totalSection"><label>Mass tax 6.25%:</label>
   $ <input type="text"  name='tax' id="tax" />
 </p>
-<p clas="total totalSection"><label>Total:</label> $ <input type="text"  name='total' id="total" />
+<p class="total totalSection"><label>Total:</label> $ <input type="text"  name='total' id="total" />
 </p>
 
 <input type = "button" value = "Submit Order" />
