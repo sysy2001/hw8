@@ -110,7 +110,7 @@ $(document).ready(function(){
     var subtotal = 0;
     var tax = 0;
     var total = 0;
-    var success = false;
+    var success = true;
     var delivery = false;
     var hour;
     var min;
@@ -163,30 +163,31 @@ $(document).ready(function(){
 
         if (invalid_lname()) {
             $("input[name='lname']").focus();
+            success = false;
             alert("Please enter your last name");
         }
         if (invalid_phone()) {
+            success = false;
             $("input[name='phone']").focus();
             alert("Please enter a valid phone number");
         }
 
         if (delivery) {
             if (invalid_street()) {
+                success = false;
                 $("input[name='street']").focus();
                 alert("Street info required");
             }
             if (invalid_city()) {
+                success = false;
                 $("input[name='city']").focus();
                 alert("City info required");
             }
         }
 
         if ($("input[name='subtotal']").val() == "0.00") {
+            success = false;
             alert("At least one item must have been ordered");
-        }
-
-        else {
-            success = true;
         }
 
         if (success) {
