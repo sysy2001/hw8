@@ -122,6 +122,7 @@ $(document).ready(function(){
     //show address for delivery
     $("input[type='radio']").click(function(){
             if(this.value == "pickup"){
+                delivery = false;
                 $(".address").hide();
             }
             if(this.value == "delivery"){
@@ -190,8 +191,13 @@ $(document).ready(function(){
             alert("At least one item must have been ordered");
         }
 
+        //display order summary in a new window if all info are provided
         if (success) {
             display();
+
+        } else { //reset flag
+            success = true;
+            delivery = false;
         }
 
     });
